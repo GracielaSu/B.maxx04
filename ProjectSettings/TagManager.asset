@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - camera
+  - Water
+  - UI
+  - Enemy
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: backgorund
+    uniqueID: 2940089997
+    locked: 0
+  - name: moon
+    uniqueID: 745842317
+    locked: 0
+  - name: buildings
+    uniqueID: 1853672209
+    locked: 0
+  - name: RoadLights
+    uniqueID: 2193293291
+    locked: 0
+  - name: platform
+    uniqueID: 296439985
+    locked: 0
+  - name: foreground
+    uniqueID: 663164357
+    locked: 0
+  - name: UI
+    uniqueID: 1202414509
+    locked: 0
+  - name: UI bg
+    uniqueID: 3386886189
+    locked: 0
