@@ -26,8 +26,12 @@ public class bullet : MonoBehaviour
             }
             Destroy(gameObject);
             GameObject effect1 = Instantiate( bulletEffect, transform.position, transform.rotation);
-
-            
+            Destroy(effect1,0.35f);
+        }
+        if (trig.gameObject.tag == "Platform")
+        {
+            Destroy(gameObject);
+            GameObject effect1 = Instantiate( bulletEffect, transform.position, transform.rotation);
             Destroy(effect1,0.35f);
         }
     }
