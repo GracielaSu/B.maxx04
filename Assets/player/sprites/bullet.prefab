@@ -626,6 +626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  DestroyTime: 0.3
   rb: {fileID: 6420630165661941863}
   bulletEffect: {fileID: 2351684439876798425, guid: 9b2263001574906418d704b6b9094af1, type: 3}
 --- !u!1 &6420630166944443085
@@ -701,7 +702,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 296439985
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1263c07a328ac43c19ff6c1a79a887a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
