@@ -43,7 +43,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5288840206683692946}
-  - component: {fileID: 5574410388763338147}
+  - component: {fileID: 3925899598153263915}
   - component: {fileID: 427682646355773823}
   m_Layer: 0
   m_Name: KnockBack
@@ -67,8 +67,8 @@ Transform:
   m_Father: {fileID: 3478122599568929789}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &5574410388763338147
-CapsuleCollider2D:
+--- !u!61 &3925899598153263915
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -80,9 +80,19 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.34240797, y: 1.2299196}
-  m_Size: {x: 1.6682146, y: 2.315552}
-  m_Direction: 0
+  m_Offset: {x: -0.31930554, y: 2.15}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1651613, y: 0.39111328}
+  m_EdgeRadius: 0
 --- !u!114 &427682646355773823
 MonoBehaviour:
   m_ObjectHideFlags: 0
