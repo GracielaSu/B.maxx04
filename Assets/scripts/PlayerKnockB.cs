@@ -8,14 +8,16 @@ public class PlayerKnockB : MonoBehaviour
     public float KBForce;
     public float KBCounter;
     public float KBTotalTime;
+    private float Timer;
 
     public bool KnockFromRight;
-    private bool KB;
+    public bool KB;
 
     // Start is called before the first frame update
     void Start()
     {
-        KB = true;
+        KB = false;
+        Timer = KBCounter;
     }
 
     // Update is called once per frame
@@ -41,6 +43,13 @@ public class PlayerKnockB : MonoBehaviour
         if(KBCounter<=0)
         {
             KB = false;
+            KBCounter = Timer;
         }
     }
+
+    public void KBtrue()
+    {
+        KB = true;
+    }
+        
 }
