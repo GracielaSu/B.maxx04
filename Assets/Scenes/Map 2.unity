@@ -55559,7 +55559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRb: {fileID: 1670789329641862709}
-  KBForce: 10
+  KBForce: 7
   KBCounter: 0.2
   KBTotalTime: 0
   KnockFromRight: 1
