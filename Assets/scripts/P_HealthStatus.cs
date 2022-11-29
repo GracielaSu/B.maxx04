@@ -8,7 +8,7 @@ public class P_HealthStatus : MonoBehaviour
     public PlayerHealth playerHealth;
     public Image fillImage;
     private Slider slider;
-    Color healthy = new Color(0,255,143,1);
+    Color healthy = new Color(0,128,0,1);
     Color good = new Color(118,234,0,1);
 
     // Start is called before the first frame update

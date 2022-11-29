@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     #region Public Variables
     
     public Transform rayCast;
+    public Transform rayCast2;
     
     public LayerMask raycastMask;
     public float rayCastLength;
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
 
     #region Private Variables
     private RaycastHit2D hit;
+    private RaycastHit2D hit2;
     private Transform target;
     private Animator anim;
     private float distance; //Store the distance b/w enemy and player
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour
     private bool inRange; //Check if Player is in range
     private bool cooling; //Check if Enemy is cooling after attack
     private float intTimer;
+    private float speed;
     #endregion
 
     private bool OnHit;
@@ -84,21 +87,24 @@ public class Enemy : MonoBehaviour
         if (inRange)
         {
             hit = Physics2D.Raycast(rayCast.position, transform.right, rayCastLength, raycastMask);
+            hit2 = Physics2D.Raycast(rayCast2.position, transform.right, rayCastLength, raycastMask);
+            speed = moveSpeed * 3;
             RaycastDebugger();
         }
 
         //When Player is detected
-        if (hit.collider != null)
+        if (hit.collider != null || hit2.collider != null)
         {
             EnemyLogic();
         }
-        else if (hit.collider == null)
+        else if (hit.collider == null || hit2.collider == null)
         {
             inRange = false;
         }
 
         if (inRange == false)
         {
+            speed = moveSpeed;
             StopAttack();
         }
     }
@@ -142,7 +148,7 @@ public class Enemy : MonoBehaviour
         {
             Vector2 targetPosition = new Vector2(target.position.x, transform.position.y);
 
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * 2 * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         }
     }
 
@@ -182,10 +188,12 @@ public class Enemy : MonoBehaviour
         if (distance > attackDistance)
         {
             Debug.DrawRay(rayCast.position, transform.right * rayCastLength, Color.red);
+            Debug.DrawRay(rayCast2.position, transform.right * rayCastLength, Color.red);
         }
         else if (attackDistance > distance)
         {
             Debug.DrawRay(rayCast.position, transform.right * rayCastLength, Color.green);
+            Debug.DrawRay(rayCast2.position, transform.right * rayCastLength, Color.green);
         }
     }
 

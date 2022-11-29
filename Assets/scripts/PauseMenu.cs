@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject settingUI;
     public GameObject healthbarUI;
+    public GameObject killcountUI;
     public string RestartScene;
     public string MainMenu;
     
@@ -38,6 +39,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         healthbarUI.SetActive(true);
         settingUI.SetActive(true);
+        killcountUI.SetActive(true);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -46,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     {
         settingUI.SetActive(false);
         healthbarUI.SetActive(false);
+        killcountUI.SetActive(false);
         pauseMenuUI.SetActive(true);
         
         Time.timeScale = 0f;
