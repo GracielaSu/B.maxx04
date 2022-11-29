@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public string SceneToLoad;
+    public RobotCount robotCount;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,10 @@ public class SceneLoader : MonoBehaviour
         
         if(collisionGameObject.name == "Player")
         {
-            LoadScene();
+            if(robotCount.kill <= 0)
+            {
+                LoadScene();
+            }
         }
     }
 
