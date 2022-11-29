@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     
     public Transform rayCast;
     public Transform rayCast2;
+
+    public RobotCount robotCount;
     
     public LayerMask raycastMask;
     public float rayCastLength;
@@ -43,15 +45,20 @@ public class Enemy : MonoBehaviour
     public GameObject HitBox;
 	public GameObject deathEffect;
 
+    void Start()
+    {
+        
+    }
+
 	public void TakeDamage()
 	{
         OnHit = true;
 	}
 
-	void Die ()
+	void Die()
 	{
-		
-		Destroy(gameObject);
+        robotCount.robotDie = true;
+        Destroy(gameObject);
 	}
 
     void Awake()
