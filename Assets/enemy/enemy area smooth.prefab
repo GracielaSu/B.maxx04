@@ -202,7 +202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8289624328771496927
 Transform:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.4569929, y: -1.604929}
+  m_Offset: {x: -2.4569929, y: -0.5272517}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -242,7 +242,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6422524, y: 2.9585776}
+  m_Size: {x: 1.6422524, y: 6.9108076}
   m_EdgeRadius: 0
 --- !u!114 &8289624328771496897
 MonoBehaviour:
@@ -398,7 +398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2574868759100454331, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.0008659959
+      value: -0.0011101365
       objectReference: {fileID: 0}
     - target: {fileID: 2574868759100454331, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -418,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2980300497796232583, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: -0.00000023841858
+      value: 0.00048804283
       objectReference: {fileID: 0}
     - target: {fileID: 2980300497796232583, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
       propertyPath: m_Bounds.m_Center.y
@@ -442,7 +442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3309227749260521907, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.0021500587
+      value: 0.0019059181
       objectReference: {fileID: 0}
     - target: {fileID: 3309227749260521907, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -510,19 +510,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5993068396695773206, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 1.5596237
+      value: 1.560112
       objectReference: {fileID: 0}
     - target: {fileID: 5993068396695773206, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.0026803017
+      value: -0.002802372
       objectReference: {fileID: 0}
     - target: {fileID: 5993068396695773206, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.6749467
+      value: 0.6749468
       objectReference: {fileID: 0}
     - target: {fileID: 5993068396695773206, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 2.222076
+      value: 2.222198
       objectReference: {fileID: 0}
     - target: {fileID: 6018628447519216808, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
       propertyPath: m_Name
@@ -642,11 +642,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayCast: {fileID: 8289624330115001796}
   rayCast2: {fileID: 4559043268207507817}
+  robotCount: {fileID: 0}
   raycastMask:
     serializedVersion: 2
     m_Bits: 128
   rayCastLength: 2.27
-  attackDistance: 5
+  attackDistance: 4
   moveSpeed: 1
   timer: 1
   leftLimit: {fileID: 8289624329844642825}
