@@ -10,6 +10,7 @@ public class weapon : MonoBehaviour
     float currentTime;
     public float BulletCount;
     private float CountBullet;
+    public Animator playerAnim;
 
     private bool cooling;
     private bool fire;
@@ -45,6 +46,7 @@ public class weapon : MonoBehaviour
     {
         if (fire==true)
         {
+            
             Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
             BulletCount -= 1;
             count = BulletCount.ToString();
