@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KnockBack : MonoBehaviour
 {
+    public Enemy enemy;
     public bool working;
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,5 +30,11 @@ public class KnockBack : MonoBehaviour
         {
             working = false;
         }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            enemy.Flip();
+        }
     }
+
+    
 }
