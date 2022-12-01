@@ -27,16 +27,22 @@ public class PlayerKnockB : MonoBehaviour
         {
             if(KnockFromRight == true)
             {
+                //gameObject.GetComponent<Rigidbody2D>().velocity=(Vector2(-KBForce,KBForce) * Time.deltaTime);
+                //gameObject.transform.Translate(new Vector2(-KBForce,KBForce) * Time.deltaTime);
                 playerRb.velocity = new Vector2(-KBForce, KBForce);
             }
             if(KnockFromRight == false)
             {
+                //gameObject.GetComponent<Rigidbody2D>().velocity=(Vector2(-KBForce,KBForce) * Time.deltaTime);
+                //gameObject.transform.Translate(new Vector2(KBForce,-KBForce) * Time.deltaTime);
                 playerRb.velocity = new Vector2(KBForce, KBForce);
             }
             KBCounter -= Time.deltaTime;
         }
         else
         {
+            //gameObject.GetComponent<Rigidbody2D>().velocity=(Vector2(0,0) * Time.deltaTime);
+            //gameObject.transform.Translate(new Vector2(0,0) * Time.deltaTime);
             playerRb.velocity = new Vector2(0, 0);
         }
         
@@ -51,5 +57,17 @@ public class PlayerKnockB : MonoBehaviour
     {
         KB = true;
     }
-        
+
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.name == "Platform")
+        {
+            KB = false;
+            KBCounter = Timer;
+            //gameObject.GetComponent<Rigidbody2D>().velocity=(Vector2(0,0) * Time.deltaTime);
+            //gameObject.transform.Translate(new Vector2(0,0) * Time.deltaTime);
+            playerRb.velocity = new Vector2(0, 0);
+            Debug.Log("wall!");
+        }
+    }*/
 }
