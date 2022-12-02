@@ -1516,8 +1516,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5991027840379014811}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.18, y: -0.43, z: 0}
-  m_LocalScale: {x: 0.18146068, y: 0.18423817, z: 1}
+  m_LocalPosition: {x: 0.291, y: 0.83, z: 0}
+  m_LocalScale: {x: 0.12934093, y: 0.144498, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1176506060895979361}
@@ -1563,8 +1563,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 296439985
   m_SortingLayer: 5
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: bcbd6807a9ce46542ac1330e8f462d71, type: 3}
+  m_SortingOrder: 6
+  m_Sprite: {fileID: 21300000, guid: 40e62837cb4c27e4b811787892d08f8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1925,6 +1925,7 @@ Transform:
   - {fileID: 7508025572549078174}
   - {fileID: 5991027839933662450}
   - {fileID: 5991027839653105353}
+  - {fileID: 8528435259185925653}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2069,7 +2070,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6420630165661941861, guid: e3e679d6f01cf124588464604ed7866b, type: 3}
   CoolDown: 0
   BulletCount: 0
-  playerAnim: {fileID: 0}
+  playerAnim: {fileID: 5991027840248302217}
 --- !u!114 &4903221660471800654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2086,7 +2087,7 @@ MonoBehaviour:
   MaxHealth: 500
   TakeDamageValue: 0
   RespawnScene: 
-  anim: {fileID: 0}
+  anim: {fileID: 5991027840248302217}
 --- !u!1 &6231363859937594349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,6 +2121,37 @@ Transform:
   - {fileID: 2175884136288465962}
   m_Father: {fileID: 4903221660471800661}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6425325742468861354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8528435259185925653}
+  m_Layer: 7
+  m_Name: raycast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8528435259185925653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6425325742468861354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4903221660471800661}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6602306940402964152
 GameObject:
