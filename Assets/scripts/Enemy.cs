@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     public float timer; //Timer for cooldown between attacks
     public Transform leftLimit;
     public Transform rightLimit;
+    public CapsuleCollider2D capsuleCollider;
+    public CapsuleCollider2D capsuleCollider2;
     #endregion
 
     #region Private Variables
@@ -37,6 +39,10 @@ public class Enemy : MonoBehaviour
     private bool cooling; //Check if Enemy is cooling after attack
     private float intTimer;
     private float speed;
+
+    private float time=1;
+	private bool count;
+    private bool isDead;
     #endregion
 
     private bool OnHit;
@@ -47,7 +53,8 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        
+        count = false;
+        isDead = false;
     }
 
 	public void TakeDamage()
@@ -58,7 +65,10 @@ public class Enemy : MonoBehaviour
 	void Die()
 	{
         robotCount.robotDie = true;
-        Destroy(gameObject);
+        isDead = true;
+        capsuleCollider.enabled=false;
+        capsuleCollider2.enabled=false;
+        anim.SetBool("Dead", true);
 	}
 
     void Awake()
@@ -70,49 +80,64 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(OnHit)
+        if(isDead == false)
         {
-            Health -= DamageTaken;
-
-            if (Health <= 0)
+            if(OnHit)
             {
-                Die();
+                Health -= DamageTaken;
+
+                if (Health <= 0)
+                {
+                    Die();
+                    count=true;
+                }
+                OnHit = false;
             }
-            OnHit = false;
+
+            if (!attackMode)
+            {
+                Move();
+            }
+
+            if (!InsideOfLimits() && !inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            {
+                SelectTarget();
+            }
+
+            if (inRange)
+            {
+                hit = Physics2D.Raycast(rayCast.position, transform.right, rayCastLength, raycastMask);
+                hit2 = Physics2D.Raycast(rayCast2.position, transform.right, rayCastLength, raycastMask);
+                speed = moveSpeed * 3;
+                RaycastDebugger();
+            }
+
+            //When Player is detected
+            if (hit.collider != null || hit2.collider != null)
+            {
+                EnemyLogic();
+            }
+            else if (hit.collider == null || hit2.collider == null)
+            {
+                inRange = false;
+            }
+
+            if (inRange == false)
+            {
+                speed = moveSpeed;
+                StopAttack();
+            }
         }
 
-        if (!attackMode)
+        if(time<=0)
         {
-            Move();
+            Debug.Log("Dead");
+            Destroy(gameObject);
+            time = 1;
         }
-
-        if (!InsideOfLimits() && !inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if(count == true)
         {
-            SelectTarget();
-        }
-
-        if (inRange)
-        {
-            hit = Physics2D.Raycast(rayCast.position, transform.right, rayCastLength, raycastMask);
-            hit2 = Physics2D.Raycast(rayCast2.position, transform.right, rayCastLength, raycastMask);
-            speed = moveSpeed * 3;
-            RaycastDebugger();
-        }
-
-        //When Player is detected
-        if (hit.collider != null || hit2.collider != null)
-        {
-            EnemyLogic();
-        }
-        else if (hit.collider == null || hit2.collider == null)
-        {
-            inRange = false;
-        }
-
-        if (inRange == false)
-        {
-            speed = moveSpeed;
-            StopAttack();
+            time -= 1 * Time.deltaTime;
         }
     }
 
@@ -123,7 +148,10 @@ public class Enemy : MonoBehaviour
         {
             target = trig.transform;
             inRange = true;
-            Flip(); 
+            if(isDead == false)
+            {
+                Flip();
+            }
         }
     }
 

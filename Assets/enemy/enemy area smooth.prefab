@@ -538,6 +538,10 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6080344865766055202, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080344865766055202, guid: 387c14f1a6fdd00469b816ed13115b97, type: 3}
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
@@ -653,6 +657,8 @@ MonoBehaviour:
   timer: 1
   leftLimit: {fileID: 8289624329844642825}
   rightLimit: {fileID: 8289624329364394772}
+  capsuleCollider: {fileID: 2630309389309343932}
+  capsuleCollider2: {fileID: 1990425129781185351}
   Health: 1000
   DamageTaken: 100
   HitBox: {fileID: 8289624328771496926}
