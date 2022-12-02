@@ -8,10 +8,11 @@ public class PlayerKnockB : MonoBehaviour
     public float KBForce;
     public float KBCounter;
     public float KBTotalTime;
+    public WallChecker wallChecker;
 
-    public Transform rayCastP;
-    public LayerMask raycastMask;
-    public float rayCastLength;
+    //public Transform rayCastP;
+    //public LayerMask raycastMask;
+    //public float rayCastLength;
 
     private float Timer;
     private RaycastHit2D wallCheck;
@@ -25,24 +26,24 @@ public class PlayerKnockB : MonoBehaviour
     {
         KB = false;
         Timer = KBCounter;
-        wallCheck = Physics2D.Raycast(rayCastP.position, transform.right, rayCastLength, raycastMask);
-        wallCheck2 = Physics2D.Raycast(rayCastP.position, -transform.right, rayCastLength, raycastMask);
+        //wallCheck = Physics2D.Raycast(rayCastP.position, transform.right, rayCastLength, raycastMask);
+        //wallCheck2 = Physics2D.Raycast(rayCastP.position, -transform.right, rayCastLength, raycastMask);
     }
 
-    void OnTriggerEnter2D(Collider2D trig)
+    /*void OnTriggerEnter2D(Collider2D trig)
     {
         if (trig.gameObject.tag == "Platform")
         {
             target = trig.transform; 
         }
-    }
+    }*/
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.DrawRay(rayCastP.position, transform.right * rayCastLength, Color.red);
-        Debug.DrawRay(rayCastP.position, -transform.right * rayCastLength, Color.red);
-        if (KB == true)
+        //Debug.DrawRay(rayCastP.position, transform.right * rayCastLength, Color.red);
+        //Debug.DrawRay(rayCastP.position, -transform.right * rayCastLength, Color.red);
+        if (KB == true && wallChecker.wall == false)
         {
             if(KnockFromRight == true)
             {
