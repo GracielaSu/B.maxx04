@@ -132,8 +132,9 @@ public class Enemy : MonoBehaviour
         if(time<=0)
         {
             Debug.Log("Dead");
-            Destroy(gameObject);
             time = 1;
+            Destroy(gameObject);
+            
         }
         if(count == true)
         {
