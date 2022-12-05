@@ -8,6 +8,7 @@ public class RobotCount : MonoBehaviour
     public Text countUI;
     public int kill;
     public bool robotDie;
+    public Animator CageAnim;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,10 @@ public class RobotCount : MonoBehaviour
             reduce();
         }
         countUI.text = kill.ToString();
+        if(kill <= 0)
+        {
+            CageAnim.SetBool("win", true);
+        }
     }
 
     void reduce()
