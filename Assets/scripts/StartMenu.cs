@@ -6,7 +6,15 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
     public string SceneToPlay;
-    public string SceneToTutorial;
+    public GameObject canvas1;
+    public GameObject canvas2;
+    
+
+    void Start()
+    {
+        canvas2.SetActive(false);
+        canvas1.SetActive(true);
+    }
 
     public void playGame()
     {
@@ -17,7 +25,8 @@ public class StartMenu : MonoBehaviour
     public void playTutorial()
     {
         Debug.Log("Tutorial.");
-        SceneManager.LoadScene(SceneToTutorial);
+        canvas1.SetActive(false);
+        canvas2.SetActive(true);
     }
 
     public void QuitGame()
