@@ -9,6 +9,11 @@ public class RobotCount : MonoBehaviour
     public int kill;
     public bool robotDie;
     public Animator CageAnim;
+    public Animator CasseAnim;
+    public Animator PlayerAnim;
+    public GameObject player;
+    public Vector2 FinalPostion;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +32,10 @@ public class RobotCount : MonoBehaviour
         if(kill <= 0)
         {
             CageAnim.SetBool("win", true);
+            CasseAnim.SetBool("win", true);
+            PlayerAnim.SetBool("win", true);
+            player.transform.position = FinalPostion;
+            player.transform.Rotate(0,0,0);
         }
     }
 
