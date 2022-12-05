@@ -26,8 +26,10 @@ public class Enemy : MonoBehaviour
     public Transform rightLimit;
     public CapsuleCollider2D capsuleCollider;
     public CapsuleCollider2D capsuleCollider2;
+    public RoomHider roomHider;
+    
     #endregion
-
+    private int DmgAfter = 200;
     #region Private Variables
     private RaycastHit2D hit;
     private RaycastHit2D hit2;
@@ -80,6 +82,11 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(roomHider.room == true)
+        {
+            DamageTaken = DmgAfter;
+        }
+        
         if(isDead == false)
         {
             if(OnHit)
