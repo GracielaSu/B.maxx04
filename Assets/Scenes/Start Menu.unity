@@ -2288,7 +2288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150ca4005e7b5c04686c112b2865396a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToPlay: Map 1
+  SceneToPlay: Intro scene
   SceneToTutorial: test
 --- !u!1 &1949337264
 GameObject:
