@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+    public AudioSource bulletsound;
     public float speed;
     public float DestroyTime;
     private float timer;
@@ -15,6 +16,7 @@ public class bullet : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.right * speed;
+        bulletsound.Play();
         //destroy = false;
         //timer = DestroyTime;
     }

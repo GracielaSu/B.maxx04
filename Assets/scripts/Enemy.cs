@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     public Transform rayCast2;
 
     public RobotCount robotCount;
+    public RobotCount2 robotCount2;
+    public mapcheck mapCheck;
     
     public LayerMask raycastMask;
     public float rayCastLength;
@@ -27,6 +29,8 @@ public class Enemy : MonoBehaviour
     public CapsuleCollider2D capsuleCollider;
     public CapsuleCollider2D capsuleCollider2;
     public RoomHider roomHider;
+    public AudioSource deadSound;
+    public AudioSource attacksound;
     
     #endregion
     private int DmgAfter = 200;
@@ -42,9 +46,12 @@ public class Enemy : MonoBehaviour
     private float intTimer;
     private float speed;
 
-    private float time=1;
+    private float time=2;
 	private bool count;
     private bool isDead;
+    private bool canplay=true;
+    public bool map1=false;
+    public bool map2=false;
     #endregion
 
     private bool OnHit;
@@ -66,7 +73,21 @@ public class Enemy : MonoBehaviour
 
 	void Die()
 	{
-        robotCount.robotDie = true;
+        if(canplay==true)
+        {
+            deadSound.Play();
+            canplay = false;
+        }
+        
+        if(mapCheck.map1==false)
+        {
+            robotCount.robotDie = true;
+        }
+        if(mapCheck.map1==true)
+        {
+            robotCount2.robotDie = true;
+        }
+        
         isDead = true;
         capsuleCollider.enabled=false;
         capsuleCollider2.enabled=false;
@@ -139,7 +160,7 @@ public class Enemy : MonoBehaviour
         if(time<=0)
         {
             Debug.Log("Dead");
-            time = 1;
+            time = 2;
             Destroy(gameObject);
             
         }
@@ -197,6 +218,7 @@ public class Enemy : MonoBehaviour
 
     void Attack()
     {
+        attacksound.Play();
         timer = intTimer; //Reset Timer when Player enter Attack Range
         attackMode = true; //To check if Enemy can still attack or not
 

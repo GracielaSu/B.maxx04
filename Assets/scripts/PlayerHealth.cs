@@ -10,10 +10,12 @@ public class PlayerHealth : MonoBehaviour
 	public float TakeDamageValue;
 	public string RespawnScene;
 	public Animator anim;
+	public AudioSource DieSound;
 	
 	private bool OnHit;
 	private float timer=3;
 	private bool count;
+	private bool canplay = true;
 	
 	void Start()
 	{
@@ -23,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage ()
 	{
 		OnHit = true;
+		
 	}
 
 	void FixedUpdate()
@@ -56,6 +59,12 @@ public class PlayerHealth : MonoBehaviour
 
 	void Die ()
 	{
+		if(canplay==true)
+		{
+			DieSound.Play();
+			canplay = false; 
+		}
+		
 		PauseMenu.GameIsPaused = true;
 		anim.SetBool("die", true);
 	}

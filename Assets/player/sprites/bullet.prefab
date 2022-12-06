@@ -626,6 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1339e1f6ef53f4b91f2c7e910aa07e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletsound: {fileID: 4198919435693518550}
   speed: 20
   DestroyTime: 0.3
   rb: {fileID: 6420630165661941863}
@@ -642,13 +643,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a456c0bdcc78c40419487569ae4bbb14, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.5
+  m_Pitch: 3
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 1
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -686,7 +687,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.51
       inSlope: 0
       outSlope: 0
       tangentMode: 0
