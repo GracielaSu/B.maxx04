@@ -34,4 +34,11 @@ public class StartMenu : MonoBehaviour
         Debug.Log("Quit.");
 		Application. Quit();
 	}
+
+    public void BackToMenu()
+    {
+        Debug.Log("back to menu.");
+        canvas1.SetActive(true);
+        canvas2.SetActive(false);
+    }
 }
